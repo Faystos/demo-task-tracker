@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Новая задача",
+    "description": "Какая то новая задача",
+    "status": "open",
+    "implementer": "Василий Иванович",
+    "priority": "high",
+    "deadline": "09.03.2024"
+  },
+  {
+    "title": "Текущая задача",
+    "description": "Какая то текущая задача",
+    "status": "in progress",
+    "implementer": "Василий Иванович",
+    "priority": "medium",
+    "deadline": "09.03.2024"
+  },
+  {
+    "title": "Проверяемая задача",
+    "description": "Какая то задача на проверке",
+    "status": "review",
+    "implementer": "Василий Иванович",
+    "priority": "low",
+    "deadline": "09.03.2024"
+  },
+  {
+    "title": "Тестируемая задача",
+    "description": "Какая то тестируемая задача",
+    "status": "testing",
+    "implementer": "Василий Иванович",
+    "priority": "high",
+    "deadline": "09.03.2024"
+  },
+  {
+    "title": "Выполненная задача",
+    "description": "Какая то выполненная задача",
+    "status": "done",
+    "implementer": "Василий Иванович",
+    "priority": "high",
+    "deadline": "09.03.2024"
+  }
+]
