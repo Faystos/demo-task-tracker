@@ -22,4 +22,8 @@ export class AppFacadeService {
   patchTaskList(taskList: ITask[]) {
     this.taskApiService.patchTasks(taskList);
   }
+
+  addTaskList(task: ITask) {
+    this.taskApiService.postTask(task);
+  }
 }

@@ -15,6 +15,13 @@
                 {{ item.title }}
               </div>
             </div>
+
+            <span *ngIf="column === 'open'">
+              <button mat-mini-fab color="primary" [title]="'Добавить новую задачу'" (click)="onOpenFormAddNewTask()">
+                <mat-icon>add</mat-icon>
+              </button>
+            </span>
+
           </div>
         </div>
       </div>

@@ -6,11 +6,19 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 
+import {provideNativeDateAdapter} from "@angular/material/core";
+
 import { routes } from './app.routes';
 import { reducer } from "./store/state/app.reducer";
 import { AppEffect } from "./store/state/app.effect";
 
-
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync(), provideStore({ 'app-store': reducer }), provideEffects(AppEffect), provideHttpClient()]
+  providers: [
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    provideStore({ 'app-store': reducer }),
+    provideEffects(AppEffect),
+    provideHttpClient(),
+    provideNativeDateAdapter()
+  ]
 };

@@ -20,5 +20,6 @@ export enum TaskStatus {
   REVIEW = 'review',
   TESTING = 'testing',
   DONE = 'done'
-
 }
+
+export const TOKEN_TASK = 'task-list-key'
