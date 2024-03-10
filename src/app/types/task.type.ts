@@ -1,10 +1,11 @@
 export interface ITask {
-  title: string,
-  description: string,
-  status: TaskStatus,
-  implementer: string,
-  priority: TaskPriority,
-  deadline: Date
+  id: string;
+  title: string;
+  description: string;
+  status: TaskStatus;
+  implementer: string;
+  priority: TaskPriority;
+  deadline: Date;
 }
 
 export enum TaskPriority {

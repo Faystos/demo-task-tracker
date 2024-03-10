@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "title": "Новая задача",
     "description": "Какая то новая задача",
     "status": "open",
@@ -8,6 +9,7 @@
     "deadline": "09.03.2024"
   },
   {
+    "id": "2",
     "title": "Текущая задача",
     "description": "Какая то текущая задача",
     "status": "in progress",
@@ -16,6 +18,16 @@
     "deadline": "09.03.2024"
   },
   {
+    "id": "3",
+    "title": "Текущая задача2",
+    "description": "Какая то текущая задача2",
+    "status": "in progress",
+    "implementer": "Василий Иванович",
+    "priority": "medium",
+    "deadline": "09.03.2024"
+  },
+  {
+    "id": "4",
     "title": "Проверяемая задача",
     "description": "Какая то задача на проверке",
     "status": "review",
@@ -24,6 +36,7 @@
     "deadline": "09.03.2024"
   },
   {
+    "id": "5",
     "title": "Тестируемая задача",
     "description": "Какая то тестируемая задача",
     "status": "testing",
@@ -32,6 +45,7 @@
     "deadline": "09.03.2024"
   },
   {
+    "id": "6",
     "title": "Выполненная задача",
     "description": "Какая то выполненная задача",
     "status": "done",

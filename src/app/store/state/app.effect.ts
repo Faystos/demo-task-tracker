@@ -26,7 +26,6 @@ export class AppEffect {
             catchError((httpErrorResponse) => of(fetchTaskListError({ httpErrorResponse })))
           )
         }
-
       })
     )
   ));

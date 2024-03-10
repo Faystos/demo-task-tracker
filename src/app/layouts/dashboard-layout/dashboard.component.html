@@ -1,0 +1,23 @@
+<section class="root">
+  <div  class="board">
+    <div class="board-wrapper">
+      <div class="board-columns">
+        <div cdkDropList cdkDropListOrientation="horizontal" class="board-columns" >
+          <div cdkDragLockAxis="x" class="board-column" *ngFor="let column of columns" cdkDrag>
+            <div class="column-title" cdkDragHandle>{{ column }}</div>
+            <div class="tasks-container"
+                 id="{{ column }}"
+                 [cdkDropListConnectedTo]="columns"
+                 cdkDropList
+                 [cdkDropListData]="tasks$ | async | filterTask : column"
+                 (cdkDropListDropped)="drop($event)">
+              <div class="task" *ngFor="let item of tasks$ | async | filterTask : column" [cdkDragData]="item" cdkDrag>
+                {{ item.title }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

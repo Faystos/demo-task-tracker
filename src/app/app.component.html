@@ -1,1 +1,23 @@
+<nav>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span style="margin-right: 5rem">
+        SV Logo
+      </span>
+
+      <span>
+        <button mat-button [matMenuTriggerFor]="menu">
+          Задачи
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item routerLink="/task-list" routerLinkActive="link-active">Список задач</a>
+          <a mat-menu-item routerLink="/my-tasks" routerLinkActive="link-active">Мои задачи</a>
+          <a mat-menu-item routerLink="/" routerLinkActive="link-active">Канбан</a>
+        </mat-menu>
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</nav>
+
 <router-outlet />

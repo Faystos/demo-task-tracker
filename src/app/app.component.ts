@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppFacadeService } from "./store/state/app.facade.service";
 
@@ -9,9 +15,15 @@ import { AppFacadeService } from "./store/state/app.facade.service";
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterModule,
     RouterOutlet,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -19,6 +31,5 @@ import { AppFacadeService } from "./store/state/app.facade.service";
 export class AppComponent {
   constructor(private appFacadeService: AppFacadeService) {
     this.appFacadeService.fetchTaskList();
-    this.appFacadeService.userList$.subscribe(value => console.log('task', value));
   }
 }
