@@ -2,3 +2,25 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.task-toggle {
+  .mat-button-toggle-label-content {
+    width: 100%;
+    text-align: start !important;
+  }
+}
+
+ul {
+  list-style: none;
+}
+ol {
+  list-style: none;
+}
+ul ul, ol ul {
+  list-style: none;
+}
+ol ol, ul ol {
+  list-style: none;
+}
+
+
