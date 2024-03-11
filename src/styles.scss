@@ -10,8 +10,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 }
 
+.task-info {
+  .mdc-card {
+    height: 100%;
+  }
+}
+
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 ol {
   list-style: none;

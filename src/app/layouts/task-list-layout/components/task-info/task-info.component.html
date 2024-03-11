@@ -1,0 +1,5 @@
+    <section class="task-info" *ngIf="task$ | async as task">
+      <task-component [task] = task>
+        <button mat-icon-button color="primary" [title]="'Редактировать'" (click)="onOpenEditDialog()"><mat-icon>create</mat-icon></button>
+      </task-component>
+    </section>

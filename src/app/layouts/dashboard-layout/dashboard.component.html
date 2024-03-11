@@ -3,20 +3,20 @@
     <div class="board-wrapper">
       <div class="board-columns">
         <div cdkDropList cdkDropListOrientation="horizontal" class="board-columns" >
-          <div cdkDragLockAxis="x" class="board-column" *ngFor="let column of columns" cdkDrag>
-            <div class="column-title" cdkDragHandle>{{ column }}</div>
+          <div cdkDragLockAxis="x" class="board-column" *ngFor="let column of status$ | async" cdkDrag>
+            <div class="column-title" cdkDragHandle>{{ column.displayName }}</div>
             <div class="tasks-container"
-                 id="{{ column }}"
+                 id="{{ column.name }}"
                  [cdkDropListConnectedTo]="columns"
                  cdkDropList
-                 [cdkDropListData]="tasks$ | async | filterTask : column"
+                 [cdkDropListData]="tasks$ | async | filterTask : column.name"
                  (cdkDropListDropped)="drop($event)">
-              <div class="task" *ngFor="let item of tasks$ | async | filterTask : column" [cdkDragData]="item" cdkDrag>
+              <div class="task" *ngFor="let item of tasks$ | async | filterTask : column.name" [cdkDragData]="item" cdkDrag (click)="openTask(item)">
                 {{ item.title }}
               </div>
             </div>
 
-            <span *ngIf="column === 'open'">
+            <span *ngIf="column.name === TaskStatus.OPEN">
               <button mat-mini-fab color="primary" [title]="'Добавить новую задачу'" (click)="onOpenFormAddNewTask()">
                 <mat-icon>add</mat-icon>
               </button>

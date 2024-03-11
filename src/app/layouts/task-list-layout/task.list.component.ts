@@ -1,15 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { shareReplay } from "rxjs";
+import { RouterOutlet } from "@angular/router";
 
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatCardModule } from '@angular/material/card';
 
-import { AppFacadeService } from "../../store/state/app.facade.service";
-import { ITask } from "../../types/task.type";
-
+import { TaskGroupComponent } from "./components/task-group/task-group.component";
+import { TaskInfoComponent } from "./components/task-info/task-info.component";
 
 @Component({
   templateUrl: 'task.list.component.html',
@@ -20,22 +16,9 @@ import { ITask } from "../../types/task.type";
   imports: [
     CommonModule,
     MatSidenavModule,
-    MatListModule,
-    MatButtonToggleModule,
-    MatCardModule
+    TaskGroupComponent,
+    TaskInfoComponent,
+    RouterOutlet
   ]
 })
-export class TaskListComponent implements OnInit {
-  public tasks$ = this.appFacadeService.taskList$.pipe(shareReplay());
-  private task!: ITask
-
-  constructor(private appFacadeService: AppFacadeService) {}
-
-  ngOnInit() {
-    console.log(this.task)
-  }
-
-  onSelectTask(evt: ITask) {
-    this.task = evt;
-  }
-}
+export class TaskListComponent {}

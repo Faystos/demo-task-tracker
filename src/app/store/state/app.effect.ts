@@ -4,10 +4,24 @@ import { catchError, map, mergeMap, of } from "rxjs";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 
 import { TaskApiService } from "../../api/task.api.service";
-import { LocalStorageApiService } from "../../local-storage.api.service";
+import { LocalStorageApiService } from "../../api/local-storage.api.service";
 
-import { fetchTaskList, fetchTaskListError, fetchTaskListSuccess } from "./app.action";
+import {
+  fetchImplementer,
+  fetchImplementerError,
+  fetchImplementerSuccess,
+  fetchStatusList,
+  fetchStatusListError,
+  fetchStatusListSuccess,
+  fetchTaskList,
+  fetchTaskListError,
+  fetchTaskListSuccess
+} from "./app.action";
 import { ITask, TOKEN_TASK } from "../../types/task.type";
+import {StatusTaskApiService} from "../../api/status-task.api.service";
+import {IStatus} from "../../types/status.type";
+import {ImplementerApiService} from "../../api/implementer.api.service";
+import {IImplementer} from "../../types/implementer.type";
 
 
 @Injectable()
@@ -32,9 +46,31 @@ export class AppEffect {
     )
   ));
 
+  fetchStatusList$ = createEffect(() =>(
+    this.actions$.pipe(
+      ofType(fetchStatusList),
+      mergeMap(() => this.statusTaskApiService.getStatus().pipe(
+        map((statusList: IStatus[]) => fetchStatusListSuccess({ statusList })),
+        catchError((httpErrorResponse) => of(fetchStatusListError({ httpErrorResponse  })))
+      ))
+    )
+  ));
+
+  fetchImplementer$ = createEffect(() => (
+    this.actions$.pipe(
+      ofType(fetchImplementer),
+      mergeMap(() => this.implementerApiService.getImplementer().pipe(
+        map((implementer: IImplementer[]) => fetchImplementerSuccess({ implementer })),
+        catchError((httpErrorResponse) => of(fetchImplementerError({ httpErrorResponse  })))
+      ))
+    )
+  ));
+
   constructor(
     private actions$: Actions,
     private taskApiService: TaskApiService,
+    private statusTaskApiService: StatusTaskApiService,
+    private implementerApiService: ImplementerApiService,
     private localStorageApi: LocalStorageApiService
   ) {}
 }

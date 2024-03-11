@@ -4,45 +4,6 @@
 
 .example-sidenav {
   width: 20%;
-
-  .mat-button-toggle-group {
-    display: flex;
-    flex-direction: column;
-    border: none;
-
-    .mat-button-toggle {
-      width: 100%;
-      margin: 5px 0;
-    }
-  }
-
-  span {
-    display: inline-block;
-    width: 100%;
-    text-align: start;
-  }
-}
-
-.example-sidenav-content {
-
-}
-
-
-ul {
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-li {
-  width: 300px;
-
-  strong {
-    display: inline-block;
-    width: 150px;
-    font-weight: normal;
-    color: #6b778c;
-  }
 }
 
 

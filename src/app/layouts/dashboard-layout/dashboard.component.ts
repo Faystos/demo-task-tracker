@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { tap, shareReplay} from "rxjs";
+import { Router, RouterModule } from "@angular/router";
+import { tap, shareReplay } from "rxjs";
 
 import { CdkDragDrop, DragDropModule } from "@angular/cdk/drag-drop";
 import { MatIconModule } from '@angular/material/icon';
@@ -26,21 +27,26 @@ import { DialogAddNewTasksComponent } from "./components/dialog-add-new-tasks/di
     MatButtonModule,
     MatDialogModule,
     FilterPipe,
-    DialogAddNewTasksComponent
+    DialogAddNewTasksComponent,
+    RouterModule,
   ]
 })
 
 export class DashboardComponent {
   readonly columns: TaskStatus[]= [TaskStatus.OPEN, TaskStatus.IN_PROGRESS, TaskStatus.REVIEW, TaskStatus.TESTING, TaskStatus.DONE];
+  readonly TaskStatus = TaskStatus;
   public tasks$ = this.appFacadeService.taskList$.pipe(
     tap((value) => this.tasks = structuredClone(value)),
     shareReplay()
   );
+
+  public status$ = this.appFacadeService.status$.pipe(shareReplay());
   private tasks!: ITask[];
 
   constructor(
     private appFacadeService: AppFacadeService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) {}
 
   drop(event: CdkDragDrop<ITask[]>): void {
@@ -53,7 +59,6 @@ export class DashboardComponent {
       }
       return task;
     });
-
     this.appFacadeService.patchTaskList(newTasks);
     this.appFacadeService.fetchTaskList();
   }
@@ -65,5 +70,9 @@ export class DashboardComponent {
         width: '35%'
       }
     );
+  }
+
+  openTask(evt: ITask) {
+    this.router.navigate(['/details-task', evt.id]);
   }
 }

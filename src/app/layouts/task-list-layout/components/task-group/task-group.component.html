@@ -1,0 +1,11 @@
+<mat-button-toggle-group>
+  <mat-button-toggle
+    class="task-toggle"
+    [class.mat-button-toggle-checked] = "task.id === (task$ | async)?.id"
+    *ngFor="let task of tasks$ | async"
+    (click)="onSelectTask(task)"
+  >
+    {{ task.title }}
+  </mat-button-toggle>
+</mat-button-toggle-group>
+

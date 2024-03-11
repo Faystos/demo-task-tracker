@@ -3,11 +3,11 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 import {ITask, TOKEN_TASK} from "../types/task.type";
-import {LocalStorageApiService} from "../local-storage.api.service";
+import {LocalStorageApiService} from "./local-storage.api.service";
 
 @Injectable({providedIn: "root"})
 export class TaskApiService {
-  readonly uri = 'assets/task.moc.json'
+  readonly uri = 'assets/task.moc.json';
   constructor(
     private http: HttpClient,
     private localStorageApi: LocalStorageApiService
@@ -20,6 +20,18 @@ export class TaskApiService {
   patchTasks(tasks: ITask[]) {
     this.localStorageApi.remove(TOKEN_TASK);
     this.localStorageApi.set<ITask>(TOKEN_TASK, tasks);
+  }
+
+  patchTask(task: ITask) {
+    const taskList = this.localStorageApi.get<ITask>(TOKEN_TASK);
+    const newTaskList = taskList.map(item => {
+      if (item.id === task.id) {
+        item = { ...task };
+      }
+      return item
+    })
+    this.localStorageApi.remove(TOKEN_TASK);
+    this.localStorageApi.set<ITask>(TOKEN_TASK, newTaskList);
   }
 
   postTask(task: ITask) {

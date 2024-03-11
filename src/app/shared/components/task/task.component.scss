@@ -1,0 +1,37 @@
+.details-task {
+  margin-bottom: 20px;
+
+  &--title {
+    h4 {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  &--list {
+    max-width: 550px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--list-item {
+    width: 250px;
+    margin-right: 25px;
+  }
+
+  &--detail-name {
+    display: inline-block;
+    width: 150px;
+    font-weight: normal;
+    color: #6b778c;
+  }
+}
+
+.description-task {
+  &--title {
+    h4 {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}

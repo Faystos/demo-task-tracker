@@ -1,0 +1,61 @@
+<ng-container *ngIf="task; else noTask">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ task.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <ng-content></ng-content>
+    </mat-card-actions>
+    <mat-card-content>
+      <div class="details-task">
+        <div class="details-task--title">
+          <h4>Детали задачи</h4>
+        </div>
+        <div class="details-task--wrap-list">
+          <ul class="details-task--list">
+            <li class="details-task--list-item">
+              <div>
+                <strong class="details-task--detail-name">Приоритет:</strong>
+                <span>{{ task.priority }}</span>
+              </div>
+            </li>
+            <li class="details-task--list-item">
+              <div>
+                <strong class="details-task--detail-name">Статус:</strong>
+                <span>{{ task.status }}</span>
+              </div>
+            </li>
+            <li class="details-task--list-item">
+              <div>
+                <strong class="details-task--detail-name">Исполнитель:</strong>
+                <span>{{ task.implementer }}</span>
+              </div>
+            </li>
+            <li class="details-task--list-item">
+              <div>
+                <strong class="details-task--detail-name">Дедлайн:</strong>
+                <span>{{ task.deadline | date : 'dd.MM.YYYY' }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="description-task">
+        <div class="description-task--title">
+          <h4>Описание</h4>
+        </div>
+        <div>
+          <p>{{ task.description }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-template #noTask>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Задач не найдено</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</ng-template>

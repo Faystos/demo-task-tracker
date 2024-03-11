@@ -7,7 +7,7 @@ import {
   Validators
 } from "@angular/forms";
 
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -15,8 +15,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 
-import {ITask, TaskPriority, TaskStatus} from "../../../../types/task.type";
-import {AppFacadeService} from "../../../../store/state/app.facade.service";
+import { ITask, TaskPriority, TaskStatus } from "../../../../types/task.type";
+import { AppFacadeService } from "../../../../store/state/app.facade.service";
 
 @Component({
   templateUrl: 'dialog-add-new-tasks.component.html',

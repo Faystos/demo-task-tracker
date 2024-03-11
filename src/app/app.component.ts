@@ -31,5 +31,7 @@ import { AppFacadeService } from "./store/state/app.facade.service";
 export class AppComponent {
   constructor(private appFacadeService: AppFacadeService) {
     this.appFacadeService.fetchTaskList();
+    this.appFacadeService.fetchStatusList();
+    this.appFacadeService.fetchImplementer();
   }
 }
