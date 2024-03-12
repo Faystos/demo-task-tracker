@@ -2,43 +2,34 @@
 <mat-dialog-content class="mat-typography">
   <form [formGroup]="formNewTask"  class="task-form example-form">
     <mat-form-field class="example-full-width">
-      <mat-label>Title</mat-label>
+      <mat-label>Заголовок</mat-label>
       <input matInput placeholder="Новая важная задача" [formControl]="formNewTask.controls.title" required>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <mat-label>Description</mat-label>
+      <mat-label>Описание</mat-label>
       <textarea matInput [formControl]="formNewTask.controls.description" required></textarea>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Deadline</mat-label>
+      <mat-label>Дедлайн</mat-label>
       <input matInput [matDatepicker]="deadline" [formControl]="formNewTask.controls.deadline" required>
       <mat-datepicker-toggle matIconSuffix [for]="deadline"></mat-datepicker-toggle>
       <mat-datepicker #deadline></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Priority</mat-label>
+      <mat-label>Приоритет</mat-label>
       <mat-select [formControl]="formNewTask.controls.priority">
-        <mat-option [value]="TaskPriority.HIGH">{{ TaskPriority.HIGH }}</mat-option>
-        <mat-option [value]="TaskPriority.MEDIUM">{{ TaskPriority.MEDIUM }}</mat-option>
-        <mat-option [value]="TaskPriority.LOW">{{ TaskPriority.LOW }}</mat-option>
+        <mat-option [value]="TaskPriority.HIGH">{{ TaskPriority.HIGH | priorityMap }}</mat-option>
+        <mat-option [value]="TaskPriority.MEDIUM">{{ TaskPriority.MEDIUM | priorityMap}}</mat-option>
+        <mat-option [value]="TaskPriority.LOW">{{ TaskPriority.LOW | priorityMap}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <status-select [disabled]="true" [formControl]="formNewTask.controls.status"></status-select>
 
     <implementer-select [formControl]="formNewTask.controls.implementer"></implementer-select>
-
-<!--    <mat-form-field>-->
-<!--      <mat-label>Implementer</mat-label>-->
-<!--      <mat-select [formControl]="formNewTask.controls.implementer">-->
-<!--        <mat-option [value]="'Василий Иванович'">Василий Иванович</mat-option>-->
-<!--        <mat-option [value]="'Иван Тарасов'">Иван Тарасов</mat-option>-->
-<!--        <mat-option [value]="'Илья Пупкин'">Илья Пупкин</mat-option>-->
-<!--      </mat-select>-->
-<!--    </mat-form-field>-->
 
     <mat-dialog-actions>
       <button mat-button color="primary" (click)="onAddNewTask()">Добавить</button>

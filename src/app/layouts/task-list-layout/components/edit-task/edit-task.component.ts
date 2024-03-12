@@ -16,6 +16,7 @@ import { StatusSelectComponent } from "../../../../shared/components/status-sele
 import {
   ImplementerSelectComponent
 } from "../../../../shared/components/implementer-select/implementer-select.component";
+import { PriorityMapPipe } from "../../../../shared/pipes/priority-map.pipe";
 
 @Component({
   templateUrl: 'edit-task.component.html',
@@ -37,7 +38,8 @@ import {
     MatSelect,
     MatSuffix,
     StatusSelectComponent,
-    ImplementerSelectComponent
+    ImplementerSelectComponent,
+    PriorityMapPipe
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

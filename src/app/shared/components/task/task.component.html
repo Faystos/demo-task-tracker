@@ -16,13 +16,13 @@
             <li class="details-task--list-item">
               <div>
                 <strong class="details-task--detail-name">Приоритет:</strong>
-                <span>{{ task.priority }}</span>
+                <span>{{ task.priority | priorityMap }}</span>
               </div>
             </li>
             <li class="details-task--list-item">
               <div>
                 <strong class="details-task--detail-name">Статус:</strong>
-                <span>{{ task.status }}</span>
+                <span>{{ task.status | statusMap }}</span>
               </div>
             </li>
             <li class="details-task--list-item">

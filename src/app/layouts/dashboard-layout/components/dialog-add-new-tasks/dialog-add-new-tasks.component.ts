@@ -21,6 +21,7 @@ import { StatusSelectComponent } from "../../../../shared/components/status-sele
 import {
   ImplementerSelectComponent
 } from "../../../../shared/components/implementer-select/implementer-select.component";
+import { PriorityMapPipe } from "../../../../shared/pipes/priority-map.pipe";
 
 @Component({
   templateUrl: 'dialog-add-new-tasks.component.html',
@@ -37,7 +38,8 @@ import {
     MatSelectModule,
     MatButtonModule,
     StatusSelectComponent,
-    ImplementerSelectComponent
+    ImplementerSelectComponent,
+    PriorityMapPipe
   ]
 })
 export class DialogAddNewTasksComponent {

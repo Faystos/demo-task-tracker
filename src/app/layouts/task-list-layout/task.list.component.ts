@@ -17,6 +17,8 @@ import { TaskSortService } from "../../shared/services/task-sort.service";
 import { TaskFilterService } from "../../shared/services/task-filter.service";
 import { ITask } from "../../types/task.type";
 import { SortType } from "../../types/filter.type";
+import { StatusMapPipe } from "../../shared/pipes/status-map.pipe";
+import { PriorityMapPipe } from "../../shared/pipes/priority-map.pipe";
 
 @Component({
   templateUrl: 'task.list.component.html',
@@ -33,6 +35,8 @@ import { SortType } from "../../types/filter.type";
     MatIconModule,
     MatDialogModule,
     TaskFilterComponent,
+    StatusMapPipe,
+    PriorityMapPipe
   ]
 })
 export class TaskListComponent implements OnInit, OnDestroy {

@@ -5,8 +5,9 @@ import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle } 
 import { MatIcon } from "@angular/material/icon";
 import { MatIconButton } from "@angular/material/button";
 
-
 import { ITask } from "../../../types/task.type";
+import { StatusMapPipe } from "../../pipes/status-map.pipe";
+import { PriorityMapPipe } from "../../pipes/priority-map.pipe";
 
 @Component({
   selector: 'task-component',
@@ -23,6 +24,8 @@ import { ITask } from "../../../types/task.type";
     MatCardTitle,
     MatIcon,
     MatIconButton,
+    StatusMapPipe,
+    PriorityMapPipe,
   ]
 })
 export class TaskComponent {
