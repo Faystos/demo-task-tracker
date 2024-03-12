@@ -1,0 +1,22 @@
+[
+  {
+    "name": "open",
+    "displayName": "Нужно сделать"
+  },
+  {
+    "name": "in progress",
+    "displayName": "В работе"
+  },
+  {
+    "name": "review",
+    "displayName": "Ревью"
+  },
+  {
+    "name": "testing",
+    "displayName": "Тестирование"
+  },
+  {
+    "name": "done",
+    "displayName": "Выполнено"
+  }
+]
