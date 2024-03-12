@@ -1,7 +1,7 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
-import {IStatus} from "../types/status.type";
+import { IStatus } from "../types/status.type";
 
 @Injectable({ providedIn: "root" })
 export class StatusTaskApiService {

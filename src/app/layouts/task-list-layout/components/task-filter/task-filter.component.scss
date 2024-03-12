@@ -1,0 +1,13 @@
+form {
+  display: flex;
+  height: 50px;
+
+  mat-form-field {
+    height: 78px;
+  }
+
+  button {
+    align-self: end;
+  }
+}
+

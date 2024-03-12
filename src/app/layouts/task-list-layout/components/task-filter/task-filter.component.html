@@ -1,0 +1,25 @@
+<ng-container>
+  <mat-toolbar>
+    <span class="margin-right-16">Фильтр по:</span>
+    <form [formGroup]="formFilter">
+      <status-select [formControl]="formFilter.controls.statusControl" class="margin-right-16"></status-select>
+      <implementer-select [formControl]="formFilter.controls.implementerControl" class="margin-right-16"></implementer-select>
+
+      <mat-form-field class="margin-right-16">
+        <mat-label>Дедлайн</mat-label>
+        <input matInput [matDatepicker]="picker" [formControl]="formFilter.controls.deadline">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="margin-right-8" (click)="onApplyFilter()">
+        <mat-icon>filter_list</mat-icon>
+        Применить
+      </button>
+      <button mat-raised-button color="warn" (click)="onResetFilter()">
+        <mat-icon>undo</mat-icon>
+        Сбросить
+      </button>
+    </form>
+  </mat-toolbar>
+</ng-container>

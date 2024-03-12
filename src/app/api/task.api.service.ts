@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
-import {ITask, TOKEN_TASK} from "../types/task.type";
-import {LocalStorageApiService} from "./local-storage.api.service";
+import { ITask, TOKEN_TASK } from "../types/task.type";
+import { LocalStorageApiService } from "./local-storage.api.service";
 
 @Injectable({providedIn: "root"})
 export class TaskApiService {

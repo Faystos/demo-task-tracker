@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
-import {IImplementer} from "../types/implementer.type";
+import { IImplementer } from "../types/implementer.type";
 
 @Injectable({ providedIn: "root" })
 export class ImplementerApiService {

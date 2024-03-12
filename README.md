@@ -1,27 +1,43 @@
-# TaskTracker
+# Тестовое задание
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+## TaskTracker ##
 
-## Development server
+Необходимо создать мини-тасктреккер (по типу Asana, можно брать её в пример).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Стек: Angular (желательно последней версии), Angular Material, SCSS/SASS/LESS, TypeScript, RxJs, по желанию NgRx.
 
-## Code scaffolding
+**В приложении должен быть реализован функционал:**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [x] Создания задачи (заголовок, название, дедлайн, приоритет, статус, исполнители);
+- [x] Редактирование задач (статус, исполнители);
+- [x] Страница детального просмотра задач и переход на неё;
+- [x] Отдельная страница со всеми задачами + фильтрация и сортировка задач по статусам, исполнителю и дате дедлайна;
+- [x] Сохранение всех изменений в localStorage;
 
-## Build
+**Доп требования (необязательны, но желательны):**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [x] Максимально использовать TypeScript (везде должны быть указаны типы, енамы, кастомные типы/интерфейсы, utility types и т.д.);
+- [x] Использовать последнюю версию ангуляра и его новые фичи;
+- [x] Реализовать имитацию получения данных с сервера с использование angular-сервисов и NgRx (в качестве сервера можно использовать localStorage);
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+***Краткий путиводитель***
 
-## Running end-to-end tests
+Проект имее 2 страницы 
+1. Канбан
+2. Общий список задач
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+Переход по стрицам возможен при переключении menu в шапке проекта
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+На странице Канбан возмножно создание новой задачи при нажати на кнопку +, так же возможен просмотр деталей задачи при нажатии на карточку задачи,
+при перетаскивании карточки задачи меняется статус задачи в зависимости от выбранного блока.
+
+На странице списка задач отображен список задач в таблице, доступен функционал сортировки и фильтрации по статусу задачи исполнителю и дате дедлайн.
+
+***Команды выполнения***
+
+- npm start - запуск сервера для разработки
+- npm run deploy - деплой проекта на GitHup page
+
+
