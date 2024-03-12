@@ -1,1 +1,6 @@
 <task-component [task]="task$ | async"></task-component>
+<div class="action">
+  <button mat-icon-button [title]="'Назад'" (click)="onBack()">
+    <mat-icon>backspace</mat-icon>
+  </button>
+</div>
