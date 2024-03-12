@@ -1,0 +1,10 @@
+<ng-container>
+  <mat-form-field>
+    <mat-label>Исполнитель</mat-label>
+    <mat-select [disabled]="disabled" [formControl]="selectControl">
+      <mat-option *ngFor="let implementer of implementer$ | async" [value]="implementer.fullName" [disabled]="disabled">
+        {{ implementer.fullName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-container>

@@ -1,0 +1,10 @@
+<ng-container>
+  <mat-form-field>
+    <mat-label>Статус</mat-label>
+    <mat-select [disabled]="disabled" [formControl]="selectControl">
+      <mat-option *ngFor="let status of status$ | async" [value]="status.name" [disabled]="disabled">
+        {{ status.displayName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-container>

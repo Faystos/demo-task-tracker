@@ -3,7 +3,9 @@
   flex-direction: column;
   align-items: flex-start;
 
-  .mat-mdc-form-field {
+  .mat-mdc-form-field,
+  status-select,
+  implementer-select {
     width: 100%;
   }
 }

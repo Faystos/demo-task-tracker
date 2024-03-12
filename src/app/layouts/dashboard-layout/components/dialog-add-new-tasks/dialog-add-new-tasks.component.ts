@@ -17,6 +17,10 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { ITask, TaskPriority, TaskStatus } from "../../../../types/task.type";
 import { AppFacadeService } from "../../../../store/state/app.facade.service";
+import { StatusSelectComponent } from "../../../../shared/components/status-select/status-select.component";
+import {
+  ImplementerSelectComponent
+} from "../../../../shared/components/implementer-select/implementer-select.component";
 
 @Component({
   templateUrl: 'dialog-add-new-tasks.component.html',
@@ -31,7 +35,9 @@ import { AppFacadeService } from "../../../../store/state/app.facade.service";
     MatFormFieldModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    StatusSelectComponent,
+    ImplementerSelectComponent
   ]
 })
 export class DialogAddNewTasksComponent {

@@ -12,6 +12,10 @@ import { MatSelect } from "@angular/material/select";
 
 import { ITask, TaskPriority, TaskStatus } from "../../../../types/task.type";
 import { AppFacadeService } from "../../../../store/state/app.facade.service";
+import { StatusSelectComponent } from "../../../../shared/components/status-select/status-select.component";
+import {
+  ImplementerSelectComponent
+} from "../../../../shared/components/implementer-select/implementer-select.component";
 
 @Component({
   templateUrl: 'edit-task.component.html',
@@ -31,7 +35,9 @@ import { AppFacadeService } from "../../../../store/state/app.facade.service";
     MatLabel,
     MatOption,
     MatSelect,
-    MatSuffix
+    MatSuffix,
+    StatusSelectComponent,
+    ImplementerSelectComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
